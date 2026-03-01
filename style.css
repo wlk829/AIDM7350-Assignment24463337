@@ -1,0 +1,199 @@
+/* Base reset and typography */
+
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; font-family: "Lato", sans-serif; color: #000000; background: #f8f8f8; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Layout helpers */
+.container { width: 95%; max-width: 1100px; margin: 0 auto; }
+
+/* Navbar / header */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: #b639cf; color: #ffffff;
+  box-shadow: 0 2px 6px rgba(131, 49, 49, 0.15);
+}
+.brand { display: flex; align-items: center; padding: 14px 0; }
+.brand .logo { width: 40px; height: 40px; background: #fff1; border-radius: 8px; margin-right: 12px; }
+.brand .name { font-size: 1.1rem; font-weight: 700; letter-spacing: .2px; }
+.brand .tag { font-size: .85rem; opacity: .9; }
+
+.navbar { display: flex; gap: 12px; align-items: center; padding: 8px 0 12px; }
+.navbar a { color: #ffffff; padding: 10px 12px; border-radius: 6px; }
+.navbar a:hover { background: rgba(255,255,255,.15); }
+.nav-purple {
+  background-color: #9d2db3;
+  color: white;
+}
+
+/* Hero / content sections */
+.section { padding: 48px 0; background: #fff; border-top: 1px solid #e5e7eb; }
+.section:first-of-type { border-top: none; }
+.section h2 { font-size: 1.75rem; margin: 0 0 8px; }
+   .standout
+        {color:coral
+        
+        }
+
+        .image1:hover{ 
+            border-radius: 50%;
+        }
+      
+
+/* Cards / projects */
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: 1fr; }
+@media (min-width: 700px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+}
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; transition: box-shadow .2s ease; }
+.card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+.card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.muted { color: #6b7280; }
+/* Image-left, text-right layout for each experience item */
+.exp-item {
+  display: flex;
+  gap: 16px;
+  align-items: center; /* vertically align image & text */
+}
+
+/* control image sizing */
+.exp-item img {
+  width: 120px;     /* adjust as you like */
+  height: auto;
+  flex: 0 0 auto;
+}
+
+/* let text area take remaining space */
+.exp-text {
+  flex: 1;
+}
+
+/* On small screens, stack image above text */
+@media (max-width: 600px) {
+  .exp-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .exp-item img {
+    width: 40%; /* or 100% if you want */
+    max-width: 200px;
+  }
+}
+
+/* Buttons */
+.btn { display: inline-block; padding: 12px 16px; border-radius: 8px; border: 1px solid #d1d5db; background: #f3f4f6; color: #111; transition: transform .1s ease; }
+.btn:hover { transform: translateY(-1px); background: #e8eaef; }
+.btn.primary { background: #0b5ed7; color: #fff; border: none; }
+.btn.secondary { background: #fff; border: 1px solid #cbd5e1; }
+
+/* Footer */
+.site-footer { text-align: center; padding: 20px 0; color: #6b7280; border-top: 1px solid #e5e7eb; background: #fff; }
+
+/* Helper utilities (optional) */
+.hide { display: none; }
+.mt-0 { margin-top: 0; }
+.mt-12 { margin-top: 12px; }
+.mb-12 { margin-bottom: 12px; }
+
+/* Accessible focus ring for keyboard nav */
+:focus { outline: 2px solid #0b5ed7; outline-offset: 2px; }
+
+/* Optional: subtle page background texture feel */
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #fefefe 0%,
+    #ffffff 23%,
+    #f8f5e5 23%,
+    #fffbe6 53%,
+    #CFE9FF 53%,
+    #CFE9FF 85.00%,
+    #f4cfe4 85.00%,
+    #f4cfe4 100%
+  );
+}
+
+/* Whole section background */
+.text-bubble-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 16px;          /* space above & below section */
+  background-color: transparent;  /* very light yellow */
+}
+
+/* Inner content block */
+.text-bubble {
+  background-color: transparent; /* section already yellow */
+  padding: 16px 16px;
+  max-width: 720px;
+  text-align: center;
+}
+
+/* Improve readability */
+.text-bubble p {
+  margin-bottom: 12px;
+}
+
+.text-bubble p:last-child {
+  margin-bottom: 0;
+}
+/* Experience section only */
+#Experience {
+  background-color: transparent; /* light blue */
+  padding: 64px 0;
+}
+
+/* Fix anchor position under fixed navbar */
+#introduction,
+#experience,
+#contact {
+  scroll-margin-top: 70px; /* adjust if navbar height changes */
+}
+/* Introduction photo gallery */
+.intro-gallery img {
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.intro-gallery img:hover {
+  transform: scale(1.03);
+}
+/* Ensure anchor scroll works with fixed navbar */
+#contact {
+  scroll-margin-top: -100px; /* adjust if navbar height changes */
+}
+
+/* Gradient purple header bar */
+.nav-purple {
+  background: linear-gradient(
+    90deg,
+    #7B2CBF 0%,
+    #9D2DB3 50%,
+    #C77DFF 100%
+  );
+  color: white;
+}
+
+/* Make header bar taller / wider */
+.w3-bar.nav-purple {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Increase clickable area of menu items */
+.w3-bar.nav-purple .w3-button {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 16px; /* optional: slightly larger text */
+}
